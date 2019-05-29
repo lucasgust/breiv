@@ -6,14 +6,14 @@ Execução
 -
 1. Clonar o repositório
 2. Acessar o diretório raiz do projeto `/breiv` e executar o build via linha de comando: `./gradlew clean build`
-3. Acessar o diretório `/breiv/docker` e executar `docker-compose up`
+3. Acessar o diretório `/docker` e executar `docker-compose up`
 4. A URL `http://localhost:8080/actuator/health` deverá retornar `{"status":"UP"}` quando a aplicação estiver no ar
 
 Documentação
 -
 As APIs e os modelos podem ser vistos na URL `http://localhost:8080/swagger-ui.html`
 
-O arquivo de coleção do Postman se encontra na raiz do projeto com o nome `breiv.postman_collection.json`
+O arquivo de coleção do Postman se encontra no diretório `/postman`
 
 Arquitetura
 -
