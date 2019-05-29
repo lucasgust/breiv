@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "f79c86d7-f917-4825-8888-c62005135104",
+		"name": "breiv",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET bank slip payment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/payment?paymentType=BANK_SLIP&id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payment"
+					],
+					"query": [
+						{
+							"key": "paymentType",
+							"value": "BANK_SLIP"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET credit card payment",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/payment?paymentType=CREDIT_CARD&id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payment"
+					],
+					"query": [
+						{
+							"key": "paymentType",
+							"value": "CREDIT_CARD"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST bank slip payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"paymentType\": \"BANK_SLIP\",\n\t\"client\": {\n\t\t\"id\": 666\n\t},\n\t\"buyer\": {\n\t\t\"name\": \"Lucas Gustavo\",\n\t\t\"email\": \"lucas@gust.com\",\n\t\t\"cpf\": \"12345678901\"\n\t},\n\t\"amount\": 123.45\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST credit card payment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"paymentType\": \"CREDIT_CARD\",\n\t\"client\": {\n\t\t\"id\": 171\n\t},\n\t\"buyer\": {\n\t\t\"name\": \"Gustavo Lucas\",\n\t\t\"email\": \"gust@lucas.com\",\n\t\t\"cpf\": \"01987654321\"\n\t},\n\t\"amount\": 543.21,\n\t\"creditCard\": {\n\t\t\"holderName\": \"LUCAS G\",\n\t\t\"number\": \"1111222233334444\",\n\t\t\"expirationDate\": \"2020-12-01\",\n\t\t\"cvv\": \"741\"\n\t}\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"payment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

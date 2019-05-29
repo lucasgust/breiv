@@ -1,0 +1,23 @@
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'breiv'
+}
+
+mainClassName = "br.com.breiv.BreivApplicationKt"
+
+applicationDefaultJvmArgs = [
+        "-server",
+        "-XX:+UseNUMA",
+        "-XX:+UseParallelGC",
+]
+
+dependencies {
+    compile project(':entity')
+    compile project(':payment')
+    compile project(':persistence')
+    compile project(':usecases')
+    compile project(':web')
+}

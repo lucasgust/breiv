@@ -1,0 +1,8 @@
+rootProject.name = 'breiv'
+
+include 'application'
+include 'entity'
+include 'payment'
+include 'persistence'
+include 'usecases'
+include 'web'
